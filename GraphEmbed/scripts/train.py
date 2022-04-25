@@ -39,6 +39,7 @@ def train(train_loader, validation_loader, model, optimizer, loss_fun, args):
     train_loss = None
     train_patience = 1
     previous_loss = 0
+    i = 0
 
     for epoch in tqdm(range(args.epochs)):
         batch_loss = 0
