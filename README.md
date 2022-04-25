@@ -23,13 +23,13 @@ Linux
     `python setup.py develop`  
 
 6. Setup OpenNE (from project root)  
-    `cd GraphEmbed/OpenNE` 
-    `pip install -r requirements.txt` 
-    `cd src` 
+    `cd GraphEmbed/OpenNE`  
+    `pip install -r requirements.txt`  
+    `cd src`  
     `python setup.py install` 
 
 5. Setup OpenKE (from project root)  
-    `cd GraphEmbed/OpenKE` 
+    `cd GraphEmbed/OpenKE`  
     `mkdir release`   
     `./make.sh `  
 
