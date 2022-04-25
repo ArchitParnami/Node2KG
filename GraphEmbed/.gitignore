@@ -1,0 +1,14 @@
+datasets/*
+.vscode/
+__pycache__
+checkpoint/
+.DS_Store
+models/saved
+scripts/results
+split/*
+scripts/LOG.txt
+hyperparameters.ods
+.ipynb_checkpoints
+compare_results.txt
+GraphEmbed.egg-info/
+GraphEmbed/results
