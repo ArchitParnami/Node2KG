@@ -114,6 +114,7 @@ def train(train_loader, validation_loader, model, optimizer, loss_fun, args):
 def test(model, test_loader, loss_fun):
     print('Testing..')
     total_test_loss = 0
+    k  = 0
     for k, test_data in enumerate(test_loader, 0):
         test_loss = cal_loss(model, test_data,loss_fun)
         total_test_loss += test_loss
