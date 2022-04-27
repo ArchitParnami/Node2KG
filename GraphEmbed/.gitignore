@@ -11,4 +11,5 @@ hyperparameters.ods
 .ipynb_checkpoints
 compare_results.txt
 GraphEmbed.egg-info/
-GraphEmbed/results
+results
+plots

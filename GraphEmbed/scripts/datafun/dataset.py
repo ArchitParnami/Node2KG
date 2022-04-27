@@ -23,6 +23,9 @@ class Dataset:
         if self.adj_list == None:
             self.adj_list = self.graph.read_graph()
     
+    def count(self):
+        return len(self.communities)
+    
     def community_size(self):
         hist = {}
         for comm in self.communities:
@@ -69,7 +72,7 @@ class Dataset:
             out = "{}-{}\t{}".format(bin, bin + self.bin_size - 1, frequency)
             print(out)
     
-    def analyze_density(self):
+    def analyze_density(self, plot=True):
         """
             Measures ratio of number of edges to maximum possible edges in the graph
         """
@@ -91,17 +94,22 @@ class Dataset:
         x = [item[0] for item in size_density]
         y = [item[1] for item in size_density]
         y_avg = np.mean(y)
-        plt.figure()
-        plt.xticks(self.xrange)
-        plt.plot(x, y)
-        plt.hlines(y_avg, xmin=self.min_size, xmax=self.max_size)
-        plt.xlabel('Community Size')
-        plt.ylabel('Average Density')
-        plt.title('Community Size vs Average Density')
-        plt.show()
-        print("Average density of graphs in size range {}-{} = {}".format(self.min_size, self.max_size,y_avg))
+        
+        if plot:
 
-    def analyze_degree(self):
+            plt.figure()
+            plt.xticks(self.xrange)
+            plt.plot(x, y)
+            plt.hlines(y_avg, xmin=self.min_size, xmax=self.max_size)
+            plt.xlabel('Community Size')
+            plt.ylabel('Average Density')
+            plt.title('Community Size vs Average Density')
+            plt.show()
+            print("Average density of graphs in size range {}-{} = {}".format(self.min_size, self.max_size,y_avg))
+        
+        return y_avg
+
+    def analyze_degree(self, plot):
         """
             Measures ratio of number of edges to number of verticies 
         """
@@ -123,16 +131,21 @@ class Dataset:
         x = [item[0] for item in size_degree]
         y = [item[1] for item in size_degree]
         y_avg = np.mean(y)
-        plt.figure()
-        plt.xticks(self.xrange)
-        plt.plot(x, y)
-        plt.hlines(y_avg, xmin=self.min_size, xmax=self.max_size)
-        plt.xlabel('Community Size')
-        plt.ylabel('Average degree')
-        plt.title('Community Size vs Average degree')
-        plt.show()
-        print("Average degree of graphs in size range {}-{} = {}".format(self.min_size, self.max_size,y_avg))
-   
+        
+        if plot:
+
+            plt.figure()
+            plt.xticks(self.xrange)
+            plt.plot(x, y)
+            plt.hlines(y_avg, xmin=self.min_size, xmax=self.max_size)
+            plt.xlabel('Community Size')
+            plt.ylabel('Average degree')
+            plt.title('Community Size vs Average degree')
+            plt.show()
+            print("Average degree of graphs in size range {}-{} = {}".format(self.min_size, self.max_size,y_avg))
+
+        return y_avg
+
     def plot_random_graph(self, min_size, max_size):
         self.init_adj()
         my_communities = [comm for comm in self.communities \

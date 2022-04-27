@@ -151,6 +151,7 @@ def save_plot_with_edges(train_edges, val_edges, test_edges, savefile):
     fig = plt.figure()
     nx.draw(G, edge_color=colors, with_labels=True)
     fig.savefig(savefile)
+    plt.close()
 
 def adjust_train_adj_list(train_adj_list, train_edges, community):
     for node in community:

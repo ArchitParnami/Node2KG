@@ -1,13 +1,13 @@
 gensim==3.0.1
 networkx==2.3
-numpy
+numpy==1.16.0
 packaging==19.0
 pandas==0.24.2
 psutil==5.6.2
 scikit-learn==0.19.0
 scipy==1.1.0
-tensorboard==1.10.0
-tensorflow==1.10.0
+tensorboard==1.15.0
+tensorflow==1.15.0
 torch==1.1.0
 tqdm==4.32.2
 matplotlib
