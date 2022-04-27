@@ -1,5 +1,5 @@
 # Node2KG
-Transformation of Node to Knowledge Graph Embeddings for Faster Link Prediction in Social Networks 
+[Paper: Transformation of Node to Knowledge Graph Embeddings for Faster Link Prediction in Social Networks](https://arxiv.org/abs/2111.09308) 
 
 ## System Requirements
 Linux
@@ -23,9 +23,7 @@ Linux
     `python setup.py develop`  
 
 6. Setup OpenNE (from project root)  
-    `cd GraphEmbed/OpenNE`  
-    `pip install -r requirements.txt`  
-    `cd src`  
+    `cd GraphEmbed/OpenNE/src`   
     `python setup.py install` 
 
 5. Setup OpenKE (from project root)  
@@ -35,5 +33,5 @@ Linux
 
 6. To run the experiments  
     `cd GraphEmbed/scripts`  
-    `./run_all.sh`  
+    `./run_parallel.sh`  
 
