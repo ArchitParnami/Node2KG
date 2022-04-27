@@ -10,6 +10,5 @@ scripts/LOG.txt
 hyperparameters.ods
 .ipynb_checkpoints
 compare_results.txt
-GraphEmbed.egg-info/
 results
 plots
