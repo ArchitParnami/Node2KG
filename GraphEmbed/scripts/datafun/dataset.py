@@ -166,3 +166,15 @@ class Dataset:
         plt.ylabel('Frequency')
         plt.title('Community Size vs Frequency')
         plt.show()
+
+if __name__ == '__main__':
+    datasets=["youtube","dblp","amazon"] + ["lj"] * 8 + ["orkut"] * 3
+    dataset_min_nodes=[16,16,21] + list(range(51,131,10)) + [151,251,351]
+    dataset_max_nodes=[20,20,25] + list(range(55,135,10)) + [155,255,355]
+    print("Dataset Graph Size Count Degree Density")
+    for dataset_name, min_size, max_size in zip(datasets, dataset_min_nodes, dataset_max_nodes):
+        d = Dataset(dataset_name, min_size, max_size,bin_size=1)
+        count = d.count()
+        degree = d.analyze_degree(plot=False)
+        density = d.analyze_density(plot=False)
+        print('{:>10} {:3d}-{:3d} {:4d} {:.2f} {:.2f}'.format(dataset_name, min_size, max_size, count, degree, density))
